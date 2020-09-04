@@ -4,7 +4,6 @@ $(function () {
     $('#btnLogout').on('click', function () {
         layer.confirm('确认退出登录?', { icon: 3, title: '提示' }, function (index) {
             //do something
-
             layer.close(index);
             localStorage.removeItem('token')
             location.href = '/login.html'
@@ -16,7 +15,6 @@ function getUserInfo() {
     $.ajax({
         url: '/my/userinfo',
         method: 'GET',
-
         success: function (res) {
             if (res.status !== 0) {
                 return layui.layer.msg('获取用户信息失败')
